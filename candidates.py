@@ -1,6 +1,5 @@
 from validation import check
-from techniques import only_two_detector
-from chunks import square_to_normal
+from chunks import square_to_normal,chunker
 def possible_numbers(sudoko,i=-1,j=-1):
     Possible_numbers = []
     for k in range(1, 10):
@@ -20,8 +19,7 @@ def All_possible_numbers(sudoko):
                 train.append(sudoko[row][column])
         table.append(train)
         train = []
-    result = only_two_detector(table)
-    return result
+    return table
 def numb_remover(psudoku,row,column,Added_Number):
     for i in range(len(psudoku[row])):
         if type(psudoku[row][i])==list:
@@ -31,7 +29,7 @@ def numb_remover(psudoku,row,column,Added_Number):
         if type(psudoku[i][column])==list:
             if Added_Number in psudoku[i][column]:
                 psudoku[i][column].remove(Added_Number)
-    square = (row//3)*3 + (column%3)
+    square = (row//3)*3 + (column//3)
     for i in range(9):
         temp_i , temp_j = square_to_normal(square,i)
         if type(psudoku[temp_i][temp_j])==list:

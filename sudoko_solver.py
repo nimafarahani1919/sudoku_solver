@@ -8,18 +8,8 @@ board = [
     [0, 0, 5, 0, 0, 0, 6, 0, 3],
     [0, 9, 0, 4, 0, 0, 0, 7, 0],
     [0, 0, 6, 0, 0, 0, 0, 0, 0]]
-board =[
-    [5, 3, 0, 0, 7, 0, 0, 0, 0],
-    [6, 0, 0, 1, 9, 5, 0, 0, 0],
-    [0, 9, 8, 0, 0, 0, 0, 6, 0],
-    [8, 0, 0, 0, 6, 0, 0, 0, 3],
-    [4, 0, 0, 8, 0, 3, 0, 0, 1],
-    [7, 0, 0, 0, 2, 0, 0, 0, 6],
-    [0, 6, 0, 0, 0, 0, 2, 8, 0],
-    [0, 0, 0, 4, 1, 9, 0, 0, 5],
-    [0, 0, 0, 0, 8, 0, 0, 7, 9]]
 
-from techniques import imputer, where_the_number
+from techniques import imputer, where_the_number, only_two_detector
 from candidates import All_possible_numbers
 psudoko = All_possible_numbers(board)
 def min_possible(psudoku):
@@ -38,19 +28,20 @@ def techniques_imputer(psudoku, sudoku):
         changed = False
         c1, sudoku = imputer(sudoku, psudoku)
         if c1 > 0:
+            only_two_detector(psudoku)
             changed = True
 
         c2, sudoku = where_the_number(sudoku, psudoku)
         if c2 > 0:
+            only_two_detector(psudoku)
             changed = True
         if c2 == -1:
             print("No valid move found")
             break
         if c2 > 0:
             changed = True
-        psudoku = All_possible_numbers(sudoku)
     return psudoku ,sudoku
-
+techniques_imputer(sudoku=board, psudoku=psudoko)
 def sudoku_printer(sudoku):
     for i, row in enumerate(sudoku):
         print(
@@ -76,5 +67,5 @@ def sudoku_printer(sudoku):
             print("-" * 153)
 
 def backtrack(sudoku):
-
+    a=1
 sudoku_printer(psudoko)
