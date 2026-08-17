@@ -1,5 +1,5 @@
-from validation import check
-from chunks import square_to_normal, chunker
+from .validation import check
+from .chunks import square_to_normal, chunker
 
 
 def possible_numbers(sudoko, i=-1, j=-1):
