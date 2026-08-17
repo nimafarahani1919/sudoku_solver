@@ -1,17 +1,19 @@
 from chunks import chunker,square_to_normal
 from candidates import numb_remover
-def imputer(sudoko:list[list[int]],psudoko :list[list[int | list[int]]]):
+def imputer(sudoku:list[list[int]], psudoko :list[list[int | list[int]]]):
     changes = 0
     for row in range(9):
         for column in range(9):
             if type(psudoko[row][column])==list:
+                if len(psudoko[row][column]) == 0:
+                    return -1,sudoku
                 if len(psudoko[row][column]) == 1:
                     added_number = psudoko[row][column][0]
-                    sudoko[row][column] =added_number
+                    sudoku[row][column] =added_number
                     psudoko[row][column] = added_number
                     numb_remover(psudoko,row,column,added_number)
                     changes += 1
-    return changes , sudoko
+    return changes , sudoku
 def check_alone_number(chunk, number,i):
     if number not in chunk[i]:
         temp_loc = [-1, -1]
