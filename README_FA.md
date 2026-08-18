@@ -416,11 +416,15 @@ python main.py
 
 ---
 
-## 🎯 هدف پروژه
+<h2 dir="rtl" align="right">🎯 هدف پروژه</h2>
 
+<p dir="rtl" align="right">
 هدف این پروژه فقط ساخت یک Sudoku Solver نیست.
+</p>
 
-Sudoku در این پروژه به عنوان یک **Constraint Satisfaction Problem** در نظر گرفته شده تا مفاهیمی مانند کاهش فضای جستجو، حل مسئله با محدودیت، الگوریتم‌های بازگشتی و **Backtracking** به صورت عملی پیاده‌سازی شوند.
-
-</div>
+<p dir="rtl" align="right">
+Sudoku در این پروژه به عنوان یک <code dir="ltr">Constraint Satisfaction Problem</code>
+در نظر گرفته شده تا مفاهیمی مانند کاهش فضای جستجو، حل مسئله با محدودیت،
+الگوریتم‌های بازگشتی و <code dir="ltr">Backtracking</code> به صورت عملی پیاده‌سازی شوند.
+</p>
 </div>
