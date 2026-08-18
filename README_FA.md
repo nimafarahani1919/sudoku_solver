@@ -412,11 +412,11 @@ python main.py
 * مقایسه‌ی عملکرد روش‌های مختلف Backtracking
 
 ---
-
+<div dir="rtl" align="right">
 ## 🎯 هدف پروژه
 
 هدف این پروژه فقط ساخت یک Sudoku Solver نیست.
 
 Sudoku در این پروژه به عنوان یک **Constraint Satisfaction Problem** در نظر گرفته شده تا مفاهیمی مانند کاهش فضای جستجو، حل مسئله با محدودیت، الگوریتم‌های بازگشتی و Backtracking به صورت عملی پیاده‌سازی شوند.
-
+</div>
 </div>
