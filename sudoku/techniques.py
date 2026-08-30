@@ -171,3 +171,25 @@ def only_two_detector(sudoku):
                                     sudoku[j_2][col_1].remove(k)
 
     return sudoku
+
+
+
+def techniques_imputer(p_sudoku, sudoku):
+    changed = True
+    while changed:
+        changed = False
+        c1, sudoku = imputer(sudoku, p_sudoku)
+        if c1 > 0:
+            only_two_detector(p_sudoku)
+            changed = True
+        if c1 == -1:
+            return False
+        c2, sudoku = where_the_number(sudoku, p_sudoku)
+        if c2 > 0:
+            only_two_detector(p_sudoku)
+            changed = True
+        if c2 == -1:
+            return False
+        if c2 > 0:
+            changed = True
+    return True
